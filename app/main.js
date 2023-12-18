@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron')
+const {app,BrowserWindow} = require('electron')
+const path=require('path')
 
 function createWindow () {
   const win = new BrowserWindow(
@@ -7,7 +8,8 @@ function createWindow () {
         height: 600,
         webPreferences: 
         {
-          preload: 'C:\\Users\\Space\\Desktop\\DigitalLife\\Launcher\\app\\runpython.js'
+          nodeIntegration: false,
+          preload: path.join(__dirname, "preload.js")
         }
     })
     
