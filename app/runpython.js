@@ -1,7 +1,5 @@
 const res = document.querySelector('#output')
-window.pythonrun()
-res.append(888)
-window.alert(555)
+window.python.test()
 function log(message) 
 {
   res.appendChild(55555)

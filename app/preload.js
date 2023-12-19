@@ -1,7 +1,11 @@
+const {contextBridge} = require('electron')
 const {PythonShell} = require('python-shell')
-const path = require('path')
-
-window.pythonrun=function()
-{
-    window.alert(7777)
-}
+contextBridge.exposeInMainWorld(
+    'python', 
+    {
+        test()
+        {
+            window.alert(999)
+        }
+    }
+)
