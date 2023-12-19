@@ -1,11 +1,4 @@
-const res = document.querySelector('#output')
-window.python.test()
-function log(message) 
-{
-  res.appendChild(55555)
-  const p = document.createElement('p')
-  p.textContent = message
-  res.appendChild(p)
-}
-
-res.append(666)
+const ASR_output = document.querySelector('#ASRoutput')
+const TTS_output = document.querySelector('#TTSoutput')
+window.python.ASR_run(ASR_output)
+window.python.TTS_run(TTS_output)
