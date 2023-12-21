@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <title>数字生命启动器</title>
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <style>
+      body {
+        background-image: url('../image/background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
   </head>
   <body>
 
@@ -16,45 +24,88 @@
         </div>
         <span class="navbar-brand">Digital Life</span>
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+        <button class="nav-link active" onclick="changeBackground('../image/background.png')" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-ASR-tab" data-bs-toggle="pill" data-bs-target="#pills-ASR" type="button" role="tab" aria-controls="pills-ASR" aria-selected="false">ASR</button>
+        <button class="nav-link" onclick="changeBackground('../image/model_bg.png')" id="pills-ASR-tab" data-bs-toggle="pill" data-bs-target="#pills-ASR" type="button" role="tab" aria-controls="pills-ASR" aria-selected="false">ASR</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-TTS-tab" data-bs-toggle="pill" data-bs-target="#pills-TTS" type="button" role="tab" aria-controls="pills-TTS" aria-selected="false">TTS</button>
+        <button class="nav-link" onclick="changeBackground('../image/background.png')" id="pills-TTS-tab" data-bs-toggle="pill" data-bs-target="#pills-TTS" type="button" role="tab" aria-controls="pills-TTS" aria-selected="false">TTS</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-Model-tab" data-bs-toggle="pill" data-bs-target="#pills-Model" type="button" role="tab" aria-controls="pills-Model" aria-selected="false">Model</button>
+        <button class="nav-link" onclick="changeBackground('../image/model_bg.png')" id="pills-Model-tab" data-bs-toggle="pill" data-bs-target="#pills-Model" type="button" role="tab" aria-controls="pills-Model" aria-selected="false">Model</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link disabled" id="pills-us-tab" data-bs-toggle="pill" data-bs-target="#pills-us" type="button" role="tab" aria-controls="pills-us" aria-selected="false">About</button>
+        <button class="nav-link" onclick="changeBackground('../image/about_bg.png')" id="pills-us-tab" data-bs-toggle="pill" data-bs-target="#pills-us" type="button" role="tab" aria-controls="pills-us" aria-selected="false">About</button>
       </li>
     </ul>
     <br></br>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-        <span id="ASRoutput"></span>
+        <div class="text-center" style="margin-top:320px">
 
+        <button class="spbutton" onclick="window.python.ASRnTTS_run(ASR_output,TTS_output)">启动</button>
+        </div>
       </div>
       <div class="tab-pane fade" id="pills-ASR" role="tabpanel" aria-labelledby="pills-ASR-tab" tabindex="0">
-        <span id="TTSoutput"></span>
+        
+        <div class="card text-center container-sm" style="background-color: rgb(255, 255, 255, 0.2);width: 500px;margin-top: 250px;">
+          <div class="card-body">
+            <h5 class="card-title btn btn-outline-danger active">日志输出</h5>
+            <p class="card-text">
+              <textarea id="ASRoutput" cols="50" rows="5"></textarea>
+            </p>
+          </div>
+        </div>
 
+       
       </div>
       <div class="tab-pane fade" id="pills-TTS" role="tabpanel" aria-labelledby="pills-TTS-tab" tabindex="0">
-
-
+        <div class="card text-center container-sm" style="background-color: rgb(255, 255, 255, 0.2);width: 500px;margin-top: 250px;">
+          <div class="card-body">
+            <h5 class="card-title btn btn-outline-danger active">日志输出</h5>
+            <p class="card-text">
+              <textarea id="TTSoutput" cols="50" rows="5"></textarea>
+            </p>
+          </div>
+        </div>
 
       </div>
       <div class="tab-pane fade" id="pills-Model" role="tabpanel" aria-labelledby="pills-Model-tab" tabindex="0">
-        
+        <div class="text-center" style="margin-top:320px">
 
-
-
+          <button class="spbutton" onclick="window.python.Model_run()">启动</button>
+        </div>
       </div>
-      <div class="tab-pane fade" id="pills-us" role="tabpanel" aria-labelledby="pills-us-tab" tabindex="0"></div>
-    </div>
+      <div class="tab-pane fade" id="pills-us" role="tabpanel" aria-labelledby="pills-us-tab" tabindex="0">
+        <div class="module-border-wrap" style="margin-left: 280px">
+          <div class="module">
+            <span>这是数字生命</span><br>
+            <br>
+            <span>一个人工智能应用实践项目</span><br>
+            <br>
+            <span>使用阿里Paraformer语音识别,一种高效的非自回归端到端语音识别框架</span><br>
+            <br>
+            <span>使用ChatGPT进行对话生成，一个广为人知的大语言模型</span><br>
+            <br>
+            <span>使用VITS2进行语音合成，最新的语音合成技术，合成的语音情感充沛</span><br>
+            <br>
+            <span>使用BERT进行情绪识别，可以较为准确地识别文本情绪</span><br>
+            <br>
+            <span>使用UE5进行角色动画生成，人物细节充足</span><br>
+            <br>
+            <br>
+            <span>作者: 汪乐 夏祥杰 华楷文</span>
 
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="C:\Users\Space\Desktop\DigitalLife\Launcher\app\runpython.js"></script>
+  <script>
+    function changeBackground(backgroundImage) {
+      document.body.style.backgroundImage = `url('${backgroundImage}')`;
+    }
+  </script>
 </html>
