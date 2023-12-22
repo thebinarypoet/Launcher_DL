@@ -5,13 +5,24 @@
 ```shell
 git clone https://github.com/thebinarypoet/Launcher_DL.git
 cd Launcher_DL
+npm install bootstrap
+npm install python-shell
+npm install electron
 npm init
 ```
 ### *在生成的package.json的scripts中写入：*
+
 ```json
 "start": "electron ."
 ```
+### *修改package.json中的main:*
+
+```shell
+ "main": "./app/main.js",
+```
+
 ### *在代码中填写[数字生命](https://github.com/wxhying/ai_project)项目各个启动文件的路径*
+
 ### *随后运行：*
 ```shell
 npm start
