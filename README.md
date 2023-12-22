@@ -1,5 +1,5 @@
 # 数字生命启动器
-### *用于启动[数字生命](https://github.com/zixiiu/Digital_Life_Server)项目的启动器*
+### *用于启动[数字生命](https://github.com/wxhying/ai_project)项目的启动器*
 ### *使用Electron+Bootstrap开发*
 ### *使用方法：*
 ```shell
@@ -11,7 +11,7 @@ npm init
 ```json
 "start": "electron ."
 ```
-### *在代码中填写[数字生命](https://github.com/zixiiu/Digital_Life_Server)项目各个启动文件的路径*
+### *在代码中填写[数字生命](https://github.com/wxhying/ai_project)项目各个启动文件的路径*
 ### *随后运行：*
 ```shell
 npm start
